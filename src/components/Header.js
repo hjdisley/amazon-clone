@@ -13,8 +13,6 @@ const Header = () => {
     if (user) auth.signOut();
   };
 
-  console.log(user);
-
   return (
     <div className="header">
       <Link to="/">

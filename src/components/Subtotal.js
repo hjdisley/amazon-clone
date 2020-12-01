@@ -9,8 +9,6 @@ const Subtotal = () => {
   const history = useHistory();
   const [{ basket }, dispatch] = useStateValue();
 
-  console.log(basket);
-
   return (
     <div className="subtotal">
       <CurrencyFormat

@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Home from './components/Home';
 import Checkout from './components/Checkout';
 import Payment from './components/Payment';
+import Orders from './components/Orders';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Login from './components/Login';
 import React, { useEffect } from 'react';
@@ -20,7 +21,6 @@ const App = () => {
 
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
-      console.log('user -> ', authUser);
       if (authUser) {
         //user is logged in send it to dataLayer
         dispatch({
@@ -41,6 +41,10 @@ const App = () => {
     <Router>
       <div className="App">
         <Switch>
+          <Route path="/orders">
+            <Header />
+            <Orders />
+          </Route>
           <Route path="/login">
             <Login />
           </Route>
