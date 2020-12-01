@@ -3,8 +3,10 @@ import '../styling/Subtotal.css';
 import CurrencyFormat from 'react-currency-format';
 import { useStateValue } from '../StateProvider';
 import { sumOfItems } from '../utils/utils';
+import { useHistory } from 'react-router-dom';
 
 const Subtotal = () => {
+  const history = useHistory();
   const [{ basket }, dispatch] = useStateValue();
 
   console.log(basket);
@@ -28,7 +30,9 @@ const Subtotal = () => {
         thousandSeparator={true}
         prefix={'£'}
       />
-      <button>Proceed to Checkout</button>
+      <button onClick={(event) => history.push('/payment')}>
+        Proceed to Checkout
+      </button>
     </div>
   );
 };

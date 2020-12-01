@@ -2,6 +2,7 @@ import './styling/index.css';
 import Header from './components/Header';
 import Home from './components/Home';
 import Checkout from './components/Checkout';
+import Payment from './components/Payment';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Login from './components/Login';
 import React, { useEffect } from 'react';
@@ -18,7 +19,7 @@ const App = () => {
         //user is logged in send it to dataLayer
         dispatch({
           type: 'SET_USER',
-          user: auth.user,
+          user: authUser,
         });
       } else {
         //user is logged out -> change dataLayer as such
@@ -40,6 +41,10 @@ const App = () => {
           <Route path="/checkout">
             <Header />
             <Checkout />
+          </Route>
+          <Route path="/payment">
+            <Header />
+            <Payment />
           </Route>
           <Route path="/">
             <Header />

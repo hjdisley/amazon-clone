@@ -69,7 +69,7 @@ const Login = () => {
             className="login__registerButton"
             onClick={register}
           >
-            Create Your Amazon Account
+            Create Your (FAKE) Amazon Account
           </button>
         </form>
       </div>
