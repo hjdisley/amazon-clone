@@ -37,8 +37,7 @@ const Payment = () => {
     getClientSecret();
   }, [basket]);
 
-  console.log('THE SECRET IS >>>', clientSecret);
-  console.log('👱', user);
+  console.log('client secret >>>', clientSecret);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -131,11 +130,9 @@ const Payment = () => {
                   thousandSeparator={true}
                   prefix={'£'}
                 />
-                <Link to={'/orders'}>
-                  <button disabled={processing || disabled || succeeded}>
-                    <span>{processing ? <p>Processing</p> : 'Buy Now'}</span>
-                  </button>
-                </Link>
+                <button disabled={processing || disabled || succeeded}>
+                  <span>{processing ? <p>Processing</p> : 'Buy Now'}</span>
+                </button>
               </div>
               {error && <div>{error}</div>}
             </form>

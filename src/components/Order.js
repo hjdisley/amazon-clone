@@ -4,7 +4,7 @@ import moment from 'moment';
 import CheckoutProduct from './CheckoutProduct';
 import CurrencyFormat from 'react-currency-format';
 
-function Order({ order }) {
+const Order = ({ order }) => {
   return (
     <div className="order">
       <h2>Order</h2>
@@ -34,6 +34,6 @@ function Order({ order }) {
       />
     </div>
   );
-}
+};
 
 export default Order;
